@@ -1,0 +1,30 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../template/head %>
+  <link href="/css/index.css" rel="stylesheet" type="text/css">
+  <link href="/css/fellowships.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <% include ../template/header %>
+  <header class="header">
+    <% include ./header %>
+  </header>
+
+  <main style="padding-top:55px; height:100%">
+    <%include ./main.ejs %>
+  </main>
+
+  <footer>
+    <% include ../template/footer %>
+  </footer>
+
+  <%include ../template/scripts %>
+</body>
+
+</html>

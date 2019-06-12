@@ -5,22 +5,24 @@
 
 <head>
   <% include ../template/head %>
+  <link href="/css/index.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="container" style="padding-top:70px">
+<body>
 
-  <header>
-    <% include ../template/header %>
+  <% include ../template/header %>
+  <header class="header">
+    <% include ./header %>
   </header>
 
-  <main>
+  <main style="padding-top:55px; height:100%">
     <%include ./main.ejs %>
   </main>
 
   <footer>
     <% include ../template/footer %>
   </footer>
-  
+
   <%include ../template/scripts %>
 </body>
 
