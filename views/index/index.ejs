@@ -6,6 +6,22 @@
 <head>
   <% include ../template/head %>
   <link href="/css/index.css" rel="stylesheet" type="text/css">
+  <style>
+    @media all and (max-width: 576px) {
+      .display-4 { 
+        font-size: 2rem !important;
+      }
+    }
+    @media all and (max-width: 768px) {
+        .display-4 { font-size: 2.5rem !important; }
+    }
+    @media all and (max-width: 992px) {
+        .display-4 { font-size: 3.0rem !important; }
+    }
+    @media all and (min-width: 992px) {
+        .display-4 { font-size: 3.5rem !important; }
+    }
+  </style>
 </head>
 
 <body>

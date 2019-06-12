@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
     { name: 'Biochemistry', ops: [] },
     { name: 'Computer Science', ops: [{ name: "tester" }, { name: "programmer" }] },
     { name: 'Engineering', ops: [] },
+    {name: 'Politics', ops: [] }
   ];
   res.render('fellowships/fellowships', {
     fCategories: fCategories
