@@ -4,10 +4,11 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var fCategories = [,
-    { name: 'Biology', ops: [] },
-    { name: 'Biochemistry', ops: [] },
-    { name: 'Computer Science', ops: [{name: "tester"}, {name: "programmer"}]},
-    { name: 'Engineering', ops: [] },
+    { name: 'Biology', link: "biology", ops: [] },
+    { name: 'Biochemistry', link: "biochem", ops: [] },
+    { name: 'Computer Science', link: "computer-science", ops: [{ name: "tester" }, { name: "programmer" }] },
+    { name: 'Engineering', link: "engineering", ops: [] },
+    { name: 'Politics', link: "politics", ops: [] }
   ];
   res.render('index/index', {
     fCategories: fCategories

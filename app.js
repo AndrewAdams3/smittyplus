@@ -3,12 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var fellowshipRouter = require('./routes/fellowships');
 var apiRouter = require('./routes/api');
 
 var app = express();
+
+//Mongo Setup
+const mongoip = '127.0.0.1';
+
+var url = 'mongodb://' + mongoip + ':27107/SmittyPlus';
+//var url = 'mongodb://varodb:varopass@' + mongoip + ':2771/VaroDB';
+
+mongoose.connect(url, { useNewUrlParser: true });
+mongoose.Promise = global.Promise;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

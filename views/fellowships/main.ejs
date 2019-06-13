@@ -11,7 +11,8 @@
   </div>
   <div class="row justify-content-center">
     <%for(var i in fCategories){%>
-      <a class="col-12 col-md-4 col-lg-3 col-xl-3 card mx-1 my-2 btn" href="/" role="button">
+      <%let ref = "/fellowships/" + fCategories[i].link%>
+      <a class="col-12 col-md-4 col-lg-3 col-xl-3 card mx-1 my-2 btn" href=<%=ref%> role="button">
         <div class="card-body">
           <p class="text-center"><%=fCategories[i].name%></p>
         </div>
