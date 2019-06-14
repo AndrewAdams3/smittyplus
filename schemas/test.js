@@ -1,12 +1,40 @@
-const Discipline = require('./FellowshipsModel');
+var Discipline = require('./DisciplineModel');
+var Category = require('./CategoryModel');
 function test() {
-  let d = new Discipline({
-    name: "test",
-    link: "test"
+  let bio = new Category({
+    name: "Bio",
+    link: "Bio"
   });
-  d.save(function (err, ops) {
+  let cs = new Category({
+    name: "computer Science",
+    link: "computer-science"
+  });
+  let cb = new Discipline({
+    name: "cell bio",
+    link: "cell-bio"
+  })
+  let t = new Discipline({
+    name: "tester",
+    link: "tester"
+  })
+  bio.save(function (err, disciplines) {
     if (!err) {
-      ops.appendChild({ name: "ctest1", link: "ctest1" }, function (err, op) {
+      disciplines.appendChild({
+        name: "cell bio",
+        link: "cell-bio"
+      }, function (err, op) {
+        if (!err) {
+          console.log(op);
+        }
+      })
+    }
+  })
+  cs.save(function (err, disciplines) {
+    if (!err) {
+      disciplines.appendChild({
+        name: "tester",
+        link: "tester"
+      }, function (err, op) {
         if (!err) {
           console.log(op);
         }

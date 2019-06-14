@@ -10,14 +10,14 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <% if(ops.length) for(var i in ops){%>
-      <a class="col-12 col-md-4 col-lg-3 col-xl-3 card mx-1 my-2 btn" href="/" role="button">
+    <% if(fsByDiscipline.length) for(var i in fsByDiscipline){%>
+      <a class="col-12 col-md-4 col-lg-3 col-xl-3 card mx-1 my-2 btn" href="<%=fsByDiscipline[i].link%>" role="button">
         <div class="card-body">
-          <p class="text-center"><%=ops[i].name%></p>
+          <p class="text-center"><%=fsByDiscipline[i].name%></p>
         </div>
       </a>
     <%} else{%>
-      <a class="col-12 col-md-4 col-lg-3 col-xl-3 card mx-1 my-2 btn" href="/" role="button">
+      <a class="col-12 col-md-4 col-lg-3 col-xl-3 card mx-1 my-2 btn" href="#" role="button">
         <div class="card-body">
           <p class="text-center">None Yet!</p>
         </div>

@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
-var ObjectId = require('mongodb').ObjectID;
+mongoose.Promise = require('bluebird').Promise;
+
 var materializedPlugin = require('mongoose-materialized');
 
 //Define a schema
 var Schema = mongoose.Schema;
 
-var FellowshipsSchema = new Schema({
+var FellowhsipSchema = new Schema({
   name: {
     type: String,
     default: "",
@@ -18,7 +19,7 @@ var FellowshipsSchema = new Schema({
   }
 });
 
-FellowshipsSchema.plugin(materializedPlugin);
-var Fellowships = mongoose.model('Fellowships', FellowshipsSchema);
+FellowhsipSchema.plugin(materializedPlugin);
+var Fellowship = mongoose.model('fellowship', FellowhsipSchema);
 
-module.exports = Fellowships;
+module.exports = Fellowship;
