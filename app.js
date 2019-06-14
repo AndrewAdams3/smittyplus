@@ -15,7 +15,7 @@ const mongoip = '127.0.0.1';
 
 var url = 'mongodb://' + mongoip + ':27107/SmittyPlus';
 //var url = 'mongodb://varodb:varopass@' + mongoip + ':2771/VaroDB';
-mongoose.connect(url, { useNewUrlParser: true, options: { promiseLibrary: mongoose.Promise } });
+mongoose.connect(url, { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 
 //middleware
