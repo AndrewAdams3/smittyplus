@@ -19,6 +19,8 @@ var url = 'mongodb://' + mongoip + ':27107/SmittyPlus';
 mongoose.connect(url, { useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
 
+console.log("mongo conneccted");
+
 //middleware
 var getFellowships = require('./controllers/fellowships').getFellowships;
 
