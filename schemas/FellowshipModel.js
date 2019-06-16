@@ -16,6 +16,30 @@ var FellowhsipSchema = new Schema({
     type: String,
     default: "",
     required: true
+  },
+  discipline: {
+    type: String,
+    required: true
+  }, 
+  location: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    required: true
+  }, 
+  term: {
+    type: String,
+    required: false
+  }, 
+  price: {
+    type: Number,
+    required: false
+  }, 
+  notes: {
+    type: String,
+    required: false
   }
 });
 

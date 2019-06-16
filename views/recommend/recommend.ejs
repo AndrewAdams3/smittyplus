@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../template/head %>
+  <link href="/css/index.css" rel="stylesheet" type="text/css">
+  <link href="/css/recommend.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style="height:100%">
+
+  <% include ../template/header %>
+  <header class="header">
+    <%include ./header%>
+  </header>
+
+  <main style="padding-top:55px; height:100%">
+    <%include ./main.ejs %>
+  </main>
+
+  <footer>
+    <% include ../template/footer %>
+  </footer>
+  <%include ../template/scripts %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(window).keydown(function(event){
+        if(event.keyCode == 13) {
+          event.preventDefault();
+          return false;
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

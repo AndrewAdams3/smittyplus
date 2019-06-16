@@ -29,12 +29,12 @@
           <%for (var i in fellowships){ %>
             <%let ref = "/fellowships/" + fellowships[i].link%>
             <% if(fellowships[i].ops.length){%>
-                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href=""><%=fellowships[i].name%></a>
+                <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="<%=fellowships[i].link%>"><%=fellowships[i].name%></a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href=<%=ref%>>View All</a></li>
+                <li><a class="dropdown-item" href="<%=ref%>">View All</a></li>
                 <div class="dropdown-divider"></div>
               <%for (var j in fellowships[i].ops){ %>
-                  <li><a class="dropdown-item" href=""><%=fellowships[i].ops[j].name%></a></li>
+                  <li><a class="dropdown-item" href="<%=fellowships[i].ops[j].link%>"><%=fellowships[i].ops[j].name%></a></li>
               <%}%>
                 </ul>
             <%}else{%>
@@ -96,7 +96,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/">Recommended Opportunities</a>
+        <a class="nav-link" href="/recommend">Recommend Opportunities</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

@@ -1,0 +1,66 @@
+<div class="container w-100 h-100">
+<div class="row mb-5">
+    <div class="col-12 col-md-6 w-50">
+      <img src="http://www.hse.gov.uk/resources/images/infosign.jpg"
+        alt="info pic" class="img-fluid"/>
+    </div>
+    <div class="col w-50">
+      <p class="display-4 text-left">Information</p>
+      <p class="display-5 text-left">Help others learn about new opportunities by telling others about your experiences below!</p>
+    </div>
+  </div>
+  <div class="row h-100">
+    <div class="col h-100">
+      <form class="w-100 h-100" action="/api/new/opportunity" method="post">
+        <div style="form-group w-100">
+          <label for="chooseF" class="w-100">Choose what kind of opportunity</label>
+          <select class="typeSelector w-100" style="height:10vh" id="chooseF" name="type">
+            <option value="Fellowship">Fellowship</option>
+          </select>
+        </div>
+        <div class="form-group mt-3">
+          <label for="chooseD">Choose what discipline</label><br/>
+          <select class="typeSelector w-100" id="chooseD" name="discipline">
+            <option value="computer-science">Computer Science</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="chooseOp">What field was this opportunity geared towards?</label><br/>
+          <select class="typeSelector w-100" id="chooseOp" name="field">
+            <option value="Tester">Tester</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Location of the program</label>
+          <textarea class="form-control" id="location" rows="1" name="location"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="title">Title of the program</label>
+          <textarea class="form-control" id="title" rows="1" name="title"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="chooseTerm" class="w-100">What term is this Opportunity generally available in?</label>
+          <select class="typeSelector w-100" id="chooseTerm" name="term">
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Fall">Fall</option>
+            <option value="Winter">Winter</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="link">Link to an associated website?</label>
+          <input class="form-control" type="text" id="link" rows="1" max="1" name="link" />
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input class="form-control" type="number" id="price" name="price">
+        </div>
+        <div class="form-group">
+          <label for="notes">Additional notes</label>
+          <textarea class="form-control" id="notes" rows="3" name="notes"></textarea>
+        </div>
+        <button type="submit" class="btn-lg btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
