@@ -15,19 +15,19 @@ var FellowhsipSchema = new Schema({
   link: {
     type: String,
     default: "",
-    required: true
+    required: false
   },
   discipline: {
     type: String,
-    required: true
+    required: false
   }, 
   location: {
     type: String,
-    required: true
+    required: false
   },
   title: {
     type: String,
-    required: true
+    required: false
   }, 
   term: {
     type: String,

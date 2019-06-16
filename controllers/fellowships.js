@@ -25,7 +25,11 @@ module.exports.getFellowships = function(req, res, next) {
         }
         res.locals.fs = fs;
         next();
+      } else {
+        next();
       }
+    } else {
+      next();
     }
   })
 }
@@ -33,7 +37,8 @@ module.exports.getFellowships = function(req, res, next) {
 module.exports.getFellowshipsByDiscipline = function(req, res, next){
   let byDiscipline = [];
   for (var i in res.locals.fs) {
-    if (res.locals.fs[i].link == req.params.discipline) {
+    console.log("link: ", res.locals.fs[i].link)
+    if (res.locals.fs[i].link == "/fellowships/" + req.params.discipline) {
       Fellowships.findOne({
         _id: res.locals.fs[i].id,
         parentId: null

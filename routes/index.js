@@ -8,6 +8,7 @@ var getFellowships = require('../controllers/fellowships').getFellowships;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log(res.locals.fs);
   res.render('index/index', {
     fellowships: res.locals.fs
   });

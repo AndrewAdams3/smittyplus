@@ -17,24 +17,27 @@ router.post("/new/opportunity", (req, res, next) => {
     type, discipline, field, location,
     title, term, link, price, notes
   } = req.body;
-  type = type.toLowerCase();
-  discipline = discipline.toLowerCase();
-  
+  type = type.replace(/\s+/g, '-').toLowerCase();
+  discipline = discipline.replace(/\s+/g, '-').toLowerCase();
+  console.log("discipline", discipline);
   switch(type){
     case "fellowship": {
       Fellowships.findOne({ 
-        "link": discipline
+        "link": `/fellowships/${discipline}/`,
+        parentId: null
       }, (err, doc) => {
         if (doc) {
+          console.log("doc found");
           doc.getChildren({
             condition: { name: field },
             sort: { name: 1 }
           }, (err, doc2) => {
             if (doc2.length) {
               console.log("field found", doc2);
-              res.send({ field: true })
+              res.redirect("/");
             } else {
               console.log("field not found");
+              console.log("doc test: ", doc);
               doc.appendChild({
                 name: field,
                 link: `/${type + 's'}/${discipline}/pages/${field.replace(/\s+/g, '-').toLowerCase()}`,
@@ -43,19 +46,24 @@ router.post("/new/opportunity", (req, res, next) => {
                 link: link, price: price,
                 notes: notes
               }, (err, doc3) => {
-                res.send({ doc: doc3 });
+                if(err) {
+                  console.log(err);
+                  res.send(err);  
+                }
+                console.log(doc3);
               })
+              console.log("testing");
+              res.redirect("/");
             }
           });
         } else {
           console.log("cat not found");
           cat = new Fellowships({ 
-            name: type,
-            link: type 
+            name: discipline,
+            link: `/fellowships/${discipline}/` 
           });
           cat.save(function (err, fields) {
             if(err) console.error(err);
-            console.log("fiels", fields);
             fields.appendChild({
               name: field,
               link: `/${type + 's'}/${discipline}/pages/${field.replace(/\s+/g, '-').toLowerCase()}`,
@@ -65,12 +73,17 @@ router.post("/new/opportunity", (req, res, next) => {
               notes: notes 
             }, function (err, vega) {
               if(err) console.error(err);
+              res.redirect("/");
             });
           });
-          res.send({ created: true });
         }
       })
+      break;
     }
+    default: {
+      res.send({ default: true });
+      break;
+  }
   }
 })
 
